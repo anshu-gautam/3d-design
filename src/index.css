@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-text-primary overflow-x-hidden;
+    cursor: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+
+  /* Hide default cursor */
+  * {
+    cursor: none !important;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl font-mono font-bold mb-8 relative;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute -bottom-2 left-0 h-1 w-20 bg-accent;
+  }
+
+  .nav-link {
+    @apply relative text-text-secondary hover:text-text-primary transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn {
+    @apply px-6 py-2 bg-secondary text-text-primary border border-transparent rounded-md 
+           hover:border-accent transition-all duration-300;
+  }
+}
+
+/* Special styles for project cards */
+.project-card {
+  @apply relative overflow-hidden bg-secondary rounded-xl transition-all duration-500;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.project-card:hover {
+  @apply shadow-lg shadow-accent/20;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
