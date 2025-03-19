@@ -107,23 +107,6 @@ const projectData: Project[] = [
 ];
 ```
 
-### Updating Experience
-
-Modify the experience data in `src/components/Experience.tsx`:
-
-```typescript
-const experiences = [
-  {
-    title: 'Your Job Title',
-    company: 'Company Name',
-    period: 'Year - Year',
-    description: 'Description of your role...',
-    technologies: ['Skill 1', 'Skill 2'],
-    color: '#ColorHex',
-  },
-  // Add more experiences...
-];
-```
 
 ## Deployment
 
